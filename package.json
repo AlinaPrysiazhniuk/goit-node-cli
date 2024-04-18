@@ -1,7 +1,6 @@
 {
   "name": "goit-node-cli",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,5 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "nodemon": "^3.1.0"
-  }
+  },
+  "description": ""
 }
