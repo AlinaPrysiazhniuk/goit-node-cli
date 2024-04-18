@@ -1,37 +1,46 @@
-import { getContactById } from "./src/contacts.js";
-import { listContacts } from "./src/contacts.js";
-import { addContact } from "./src/contacts.js";
-import { removeContact } from "./src/contacts.js";
+import {
+  getContactById,
+  listContacts,
+  addContact,
+  removeContact,
+} from "./src/contacts.js";
+import { program } from "commander";
 
-const invokeAction = async ({ action, id, name, email, phone }) => {
+async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
       const allContacts = await listContacts();
-      return console.table(allContacts);
+      console.table(allContacts);
+      break;
 
     case "get":
       const oneContact = await getContactById(id);
-      return console.log(oneContact);
+      console.log(oneContact);
+      break;
 
     case "add":
       const newContact = await addContact(name, email, phone);
-      return console.log(newContact);
+      console.log(newContact);
+      break;
 
     case "remove":
       const removeContactItem = await removeContact(id);
-      return console.log(removeContactItem);
-  }
-};
+      console.log(removeContactItem);
+      break;
 
-// invokeAction({ action: "list" });
-// invokeAction({
-//   action: "get",
-//   id: "05olLMgyVQdWRwgKfg5J1",
-// });
-// invokeAction({
-//   action: "add",
-//   name: "Mango",
-//   email: "mango@gmail.com ",
-//   phone: "322-22-22",
-// });
-// invokeAction({ action: "remove", id: "1KFJbrypL9tB2sqsAjzXJ" });
+    default:
+      console.warn("\x1B[31m Unknown action type!");
+  }
+}
+
+program
+  .option("-a, --action <action>", "choose action")
+  .option("-i, --id <id>", "user id")
+  .option("-n, --name <name>", "user name")
+  .option("-e, --email <email>", "user email")
+  .option("-p, --phone <phone>", "user phone");
+
+program.parse();
+
+const options = program.opts();
+invokeAction(options);

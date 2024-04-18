@@ -6,12 +6,6 @@
     "phone": "123-123-123"
   },
   {
-    "id": "05olLMgyVQdWRwgKfg5J1",
-    "name": "Olia",
-    "email": "olia@gmail.com",
-    "phone": "124-124-124"
-  },
-  {
     "id": "05olLMgyVQdWRwgKfg5Jd",
     "name": "Mango",
     "email": "mango@gmail.com",
@@ -22,28 +16,6 @@
     "name": "Mango",
     "email": "mango@gmail.com ",
     "phone": "322-22-22"
-  },
-  {
-    "0": "M",
-    "1": "a",
-    "2": "n",
-    "3": "g",
-    "4": "o",
-    "id": "3f1Y2rOZhtVTIAwRtPS8J",
-    "email": "mango@gmail.com ",
-    "phone": "322-22-22"
-  },
-  {
-    "id": "Txp_XHyIDw72QQmIYcFFQ",
-    "name": "Mango"
-  },
-  {
-    "id": "9EMHacGDGCRXdEOIG9OOr",
-    "name": {
-      "name": "Mango",
-      "email": "mango@gmail.com ",
-      "phone": "322-22-22"
-    }
   },
   {
     "id": "sflzHJFZmkrrKnLVYTHDE",
