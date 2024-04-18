@@ -1,28 +1,29 @@
-import path from "path";
-import fs from "node:fs/promises";
+import path from "node:path";
+import * as fs from "node:fs/promises";
 import { nanoid } from "nanoid";
 
-const __filename = new URL(import.meta.url).pathname;
-const __dirname = path.dirname(__filename);
-const contactsPath = path.join(__dirname, "contacts.json");
+const contactsPath = path.resolve("src", "contacts.json");
 
 export async function listContacts() {
-  const data = await fs.readFile(contactsPath);
+  const data = await fs.readFile(contactsPath, "utf-8");
   return JSON.parse(data);
 }
 
 export async function getContactById(id) {
   const contacts = await listContacts();
-  const result = contacts.find((item) => item.id === id);
-  return result || null;
+  const contact = contacts.find((item) => item.id === id);
+  if (typeof contact === "undefined") {
+    return null;
+  }
+  return contact;
 }
 
 export async function addContact(data) {
   const contacts = await listContacts();
-  const newBook = { id: nanoid(), ...data };
-  contacts.push(newBook);
+  const newContact = { id: nanoid(), ...data };
+  contacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
-  return newBook;
+  return newContact;
 }
 
 export async function removeContact(contactId) {

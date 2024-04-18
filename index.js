@@ -23,7 +23,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-// invokeAction({ action: "list" });
+invokeAction({ action: "list" });
 // invokeAction({
 //   action: "get",
 //   id: "05olLMgyVQdWRwgKfg5J1",
