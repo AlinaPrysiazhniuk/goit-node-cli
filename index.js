@@ -28,10 +28,10 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
 //   action: "get",
 //   id: "05olLMgyVQdWRwgKfg5J1",
 // });
-// invokeAction({
-//   action: "add",
-//   name: "Mango",
-//   email: "mango@gmail.com ",
-//   phone: "322-22-22",
-// });
-invokeAction({ action: "remove", id: "witOmdXHu__f_3vvcee7-" });
+invokeAction({
+  action: "add",
+  name: "Mango",
+  email: "mango@gmail.com ",
+  phone: "322-22-22",
+});
+// invokeAction({ action: "remove", id: "witOmdXHu__f_3vvcee7-" });
