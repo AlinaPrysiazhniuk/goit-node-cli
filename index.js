@@ -3,7 +3,7 @@ import {
   listContacts,
   addContact,
   removeContact,
-} from "./src/contacts.js";
+} from "./contacts.js";
 import { program } from "commander";
 
 async function invokeAction({ action, id, name, email, phone }) {
