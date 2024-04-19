@@ -5,7 +5,11 @@ import { nanoid } from "nanoid";
 const contactsPath = path.resolve("contacts.json");
 
 async function writeContacts(contacts) {
-  return await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  const data = await fs.writeFile(
+    contactsPath,
+    JSON.stringify(contacts, null, 2)
+  );
+  return data;
 }
 
 async function listContacts() {
