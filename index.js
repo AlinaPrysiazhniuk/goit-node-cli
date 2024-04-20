@@ -1,5 +1,5 @@
-import Contacts from "./contacts.js";
 import { program } from "commander";
+import Contacts from "./contacts.js";
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
